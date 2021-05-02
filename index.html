@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <title>ALPACA-VOICECHANGER</title>
+
+    <link href="index.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.17/Tone.js" integrity="sha512-EIXtbmVz5SVaJkojf2cSv73z6rh3PKBHOdXVvHEUjHSYrIQd1RaaJnosglDSXuMaRxZr5rk6QdYGm2WcZX/U1Q==" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <h1>ALPACA-VOICECHANGER</h1>
+
+    <div>
+      <div class="button" name="vc-submit" style="display: inline-block;">Start</div>
+    </div>
+
+    <div>
+      <div name="effect">
+        <h3>Effect</h3>
+        <div>
+          <p>Choose effect</p>
+          <select name="effect-chooser">
+            <option value=""></option>
+            <option value="biquadfilter">BiquadFilter</option>
+            <option value="gate">Gate</option>
+            <option value="pitchshift">PitchShift</option>
+          </select>
+        </div>
+        <div name="effect-editor" style="margin: 10px;">
+        </div>
+      </div>
+
+      <div class="button" name="vc-effect-add" style="display: inline-block;">Add</div>
+    </div>
+
+    <div>
+      <h3>Effect List</h3>
+      <div name="effect-list" ondragover="EffectDragover(event)" ondrop="EffectDrop(event)">
+      </div>
+    </div>
+
+    <div name="explaination" style="margin-top: 100px;">
+      <h2>これは何？</h2>
+      <p>使い方は Github 参照のこと。</p>
+    </div>
+
+    <div class="fotter flex-container">
+      <div>v1.0.0</div>
+      <div><a target="_blank" href="https://github.com/weizlogy/voicechanger">Github</div>
+      <div><a target="_blank" href="https://twitter.com/twilightalpaca">Twitter</div>
+    </div>
+
+    <div style="display: none;">
+      <div id="clone-biquadfilter">
+        <div class="item"><span>Frequency</span>
+          <input type="text" name="effect-biquadfilter-freq"/>
+        </div>
+        <div class="item"><span>Type</span>
+          <input type="text" name="effect-biquadfilter-type"/>
+        </div>
+      </div>
+      <div id="clone-gate">
+        <div class="item"><span>Threshold</span>
+          <input type="text" name="effect-gate-threshold"/>
+        </div>
+        <div class="item"><span>Time</span>
+          <input type="text" name="effect-gate-smoothing"/>
+        </div>
+      </div>
+      <div id="clone-pitchshift">
+        <div class="item"><span>Pitch</span>
+          <input type="text" name="effect-pitchsift-pitch"/>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

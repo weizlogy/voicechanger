@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', (_) => {
           effectArray.push(effectObj);
           break;
         case 'gate':
-          effectObj = new Tone.BiquadFilter(
+          effectObj = new Tone.Gate(
             el.querySelector('input[name="effect-gate-threshold"]').value,
             el.querySelector('input[name="effect-gate-smoothing"]').value);
           effectArray.push(effectObj);
